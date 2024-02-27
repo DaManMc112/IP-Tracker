@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IP Tracker</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 80%;
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+    }
+    form {
+        text-align: center;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    .result {
+        margin-top: 20px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>IP Tracker</h1>
+    <form id="ipForm">
+        <input type="text" id="ipInput" placeholder="Enter IP address">
+        <input type="submit" value="Track">
+    </form>
+    <div class="result" id="result"></div>
+</div>
+<script>
+    const ipForm = document.getElementById('ipForm');
+    const ipInput = document.getElementById('ipInput');
+    const result = document.getElementById('result');
+
+    ipForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const ip = ipInput.value.trim();
+        if (ip === '') {
+            result.innerHTML = 'Please enter a valid IP address';
+        } else {
+            // Perform tracking or display result here
+            result.innerHTML = `Tracking IP: ${ip}`;
+        }
+    });
+</script>
+</body>
+</html>
